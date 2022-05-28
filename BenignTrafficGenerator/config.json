@@ -1,0 +1,5 @@
+[
+    {"type": "HTTP", "description": "Simple HTTP traffic."},
+    {"type": "HTTP", "description": "Simple HTTP traffic 2."},
+    {"type": "DNS", "description": "Simple DNS traffic."}
+]

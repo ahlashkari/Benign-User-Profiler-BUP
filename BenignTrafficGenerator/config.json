@@ -1,5 +1,36 @@
 [
-    {"type": "HTTP", "description": "Simple HTTP traffic."},
-    {"type": "HTTP", "description": "Simple HTTP traffic 2."},
-    {"type": "DNS", "description": "Simple DNS traffic."}
+    {
+        "type": "HTTP", "description": "Simple HTTP traffic.", "browser": "firefox",
+        "link": "http://ahlashkari.com/",
+        "frequency": 3,
+        "time_interval": 60,
+        "start_time": "14:24",
+        "clicks": [
+            {"type": "link", "value": "Datasets"},
+            {"type": "link", "value": "Obfuscated Malware Memory Analysis (CIC-MalMem-2022)", "wait_after": 1},
+            {"type": "scroll_down"},
+            {"type": "link", "value": "You can download this dataset from here."},
+            {"type": "link", "value": "Download the dataset"},
+            {"type": "next_tab", "wait_after": 10},
+            {"type": "text_form", "name": "first_name", "value": "moein"},
+            {"type": "text_form", "name": "last_name", "value": "shafi"},
+            {"type": "text_form", "name": "email", "value": "gmail@moeinshafi.ir"},
+            {"type": "text_form", "name": "institution", "value": "york"},
+            {"type": "text_form", "name": "job_title", "value": "bug developer"},
+            {"type": "submit_by_path", "value": "//form[1]", "wait_after": 10},
+            {"type": "link", "value": "Obfuscated-MalMem2022.csv", "wait_after": 10}
+        ]
+    },
+
+    {
+        "type": "HTTPS", "browser": "firefox",
+        "link": "https://www.moeinshafi.ir",
+        "frequency": 5,
+        "time_interval": 30,
+        "start_time": "08:00"
+    },
+
+    {
+        "type": "DNS", "description": "Simple DNS traffic."
+    }
 ]

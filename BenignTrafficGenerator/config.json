@@ -31,6 +31,16 @@
     },
 
     {
+        "type": "SSH", "description": "Simple SSH traffic.",
+        "address": "162.55.212.185", "port": "22222",
+        "username": "testmoein", "password": "SshforTest1234@moein",
+        "commands": [
+            "ls",
+            "mkdir test"
+        ]
+    },
+
+    {
         "type": "DNS", "description": "Simple DNS traffic."
     }
 ]

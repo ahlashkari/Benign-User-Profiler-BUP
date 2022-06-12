@@ -2,7 +2,7 @@
 
 from selenium import webdriver
 from .traffic_model import TrafficModel
-from .http_model import HTTPModel
+from .ssh_model import SSHModel
 
 
 class ModelFactory(object):
@@ -13,5 +13,8 @@ class ModelFactory(object):
         # TODO: change it to use enum
         if model_config["type"] == "HTTP" or model_config["type"] == "HTTPS":
             return HTTPModel(model_config, self.firefox_driver)
+        if model_config["type"] == "SSH":
+            return SSHModel(model_config)
+
         print(f">>>> Error occured, unknown type '{model_config['type']}' !")
         return None

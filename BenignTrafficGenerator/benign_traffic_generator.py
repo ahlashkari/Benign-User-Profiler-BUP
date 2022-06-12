@@ -15,6 +15,7 @@ class BenignTrafficGenerator(object):
         traffics_models = []
         print("> Creating traffic models based on the configs")
         model_factory = ModelFactory()
+
         for traffic_config in config_loader.traffics_configs:
             traffic_model = model_factory.create_model(traffic_config)
             if traffic_model is not None:

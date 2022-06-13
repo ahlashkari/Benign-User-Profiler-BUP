@@ -3,3 +3,5 @@
 from .model_factory import ModelFactory
 from .traffic_model import TrafficModel
 from .http_model import HTTPModel
+from .ssh_model import SSHModel
+from .cmd_model import CMDModel

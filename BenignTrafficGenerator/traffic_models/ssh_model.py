@@ -19,5 +19,6 @@ class SSHModel(TrafficModel):
         ssh = paramiko.SSHClient()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         ssh.connect(host, port, username, password)
+        # TODO: add wait_after
         for command in self.__model_config["commands"]:
-            stdin, stdout, stderr = ssh.exec_command(command)
+            stdin, stdout, stderr = ssh.exec_command(command["str"])

@@ -35,8 +35,18 @@
         "address": "162.55.212.185", "port": "22222",
         "username": "testmoein", "password": "SshforTest1234@moein",
         "commands": [
-            "ls",
-            "mkdir test"
+            {"str": "ls"},
+            {"str": "mkdir test", "wait_after": 2},
+            {"str": "cd test"}
+        ]
+    },
+
+    {
+        "type": "CMD", "description": "Simple CMD traffic.",
+        "commands": [
+            {"str": "wget http://205.174.165.80/CICDataset/CICMalMem2022/Dataset/Obfuscated-MalMem2022.csv"},
+            {"str": "apt update"},
+            {"str": "apt -y dist-upgrade", "wait_after": 10}
         ]
     },
 

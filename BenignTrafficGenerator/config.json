@@ -34,6 +34,9 @@
         "type": "SSH", "description": "Simple SSH traffic.",
         "address": "162.55.212.185", "port": "22222",
         "username": "testmoein", "password": "SshforTest1234@moein",
+        "frequency": 5,
+        "time_interval": 30,
+        "start_time": "08:00",
         "commands": [
             {"str": "ls"},
             {"str": "mkdir test", "wait_after": 2},
@@ -43,10 +46,29 @@
 
     {
         "type": "CMD", "description": "Simple CMD traffic.",
+        "frequency": 5,
+        "time_interval": 30,
+        "start_time": "08:00",
         "commands": [
             {"str": "wget http://205.174.165.80/CICDataset/CICMalMem2022/Dataset/Obfuscated-MalMem2022.csv"},
             {"str": "apt update"},
             {"str": "apt -y dist-upgrade", "wait_after": 10}
+        ]
+    },
+
+    {
+        "type": "SMTP", "description": "Simple SMTP traffic.",
+        "sender": "benign.traffic.generator@gmail.com", "password": "akqsvbyhahcyfrez",
+        "receivers": ["mosafer.moein@gmail.com", "moein.shafi@ut.ac.ir"],
+        "frequency": 5,
+        "time_interval": 30,
+        "start_time": "08:00",
+        "emails": [
+            {
+                "subject": "Benign Traffic Generator Test",
+                "text": "Hi Dear Tester\nThis is a automatic test from Benign Traffic Generator.\nHave a nice day!\n",
+                "wait_after": 3600
+            }
         ]
     },
 

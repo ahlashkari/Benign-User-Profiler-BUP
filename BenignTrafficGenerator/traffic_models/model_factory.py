@@ -5,7 +5,7 @@ from .traffic_model import TrafficModel
 from .http_model import HTTPModel
 from .ssh_model import SSHModel
 from .cmd_model import CMDModel
-
+from .email_model import SMTPModel
 
 class ModelFactory(object):
     def __init__(self):
@@ -19,6 +19,8 @@ class ModelFactory(object):
             return SSHModel(model_config)
         if model_config["type"] == "CMD":
             return CMDModel(model_config)
+        if model_config["type"] == "SMTP":
+            return SMTPModel(model_config)
 
         print(f">>>> Error occured, unknown type '{model_config['type']}' !")
         return None

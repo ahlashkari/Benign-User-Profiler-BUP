@@ -73,6 +73,14 @@
     },
 
     {
+        "type": "IMAP", "description": "Simple IMAP traffic.",
+        "username": "benign.traffic.generator@gmail.com", "password": "akqsvbyhahcyfrez",
+        "frequency": 5,
+        "time_interval": 30,
+        "start_time": "08:00"
+    },
+
+    {
         "type": "DNS", "description": "Simple DNS traffic."
     }
 ]

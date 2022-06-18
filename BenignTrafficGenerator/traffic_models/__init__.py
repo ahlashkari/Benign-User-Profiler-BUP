@@ -5,4 +5,4 @@ from .traffic_model import TrafficModel
 from .http_model import HTTPModel
 from .ssh_model import SSHModel
 from .cmd_model import CMDModel
-from .email_model import EmailModel, SMTPModel
+from .email_model import SMTPModel, IMAPModel

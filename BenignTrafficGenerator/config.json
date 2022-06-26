@@ -81,6 +81,24 @@
     },
 
     {
+        "type": "FTP", "description": "Simple FTP traffic.",
+        "address": "162.55.212.185",
+        "username": "testmoein", "password": "SshforTest1234@moein",
+        "frequency": 5,
+        "time_interval": 30,
+        "start_time": "08:00",
+        "downloads": [
+            {"str": "ls"},
+            {"str": "cd test"}
+        ],
+        "uploads": [
+            {"str": "ls"},
+            {"str": "cd test"}
+        ]
+
+    },
+
+    {
         "type": "DNS", "description": "Simple DNS traffic."
     }
 ]

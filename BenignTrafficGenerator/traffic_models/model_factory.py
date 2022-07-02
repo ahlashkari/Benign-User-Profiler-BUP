@@ -27,6 +27,8 @@ class ModelFactory(object):
             return IMAPModel(model_config)
         if model_config["type"] == "FTP":
             return FTPModel(model_config)
+        if model_config["type"] == "SFTP":
+            return FTPModel(model_config, True)
 
         print(f">>>> Error occured, unknown type '{model_config['type']}' !")
         return None

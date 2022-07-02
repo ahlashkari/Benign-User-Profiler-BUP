@@ -66,7 +66,8 @@
         "emails": [
             {
                 "subject": "Benign Traffic Generator Test",
-                "text": "Hi Dear Tester\nThis is a automatic test from Benign Traffic Generator.\nHave a nice day!\n",
+                "text": "Hi Dear Tester\nThis is an automatic test from Benign Traffic Generator.\nHave a nice day!\n",
+                "attachments": ["/root/readme.txt", "/root/image.png"],
                 "wait_after": 3600
             }
         ]
@@ -75,6 +76,7 @@
     {
         "type": "IMAP", "description": "Simple IMAP traffic.",
         "username": "benign.traffic.generator@gmail.com", "password": "akqsvbyhahcyfrez",
+        "attachments_dir": "/root/emails",
         "frequency": 5,
         "time_interval": 30,
         "start_time": "08:00"

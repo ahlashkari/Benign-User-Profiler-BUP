@@ -6,6 +6,7 @@ from .http_model import HTTPModel
 from .ssh_model import SSHModel
 from .cmd_model import CMDModel
 from .email_model import SMTPModel, IMAPModel
+from .ftp_model import FTPModel
 
 
 class ModelFactory(object):
@@ -24,6 +25,10 @@ class ModelFactory(object):
             return SMTPModel(model_config)
         if model_config["type"] == "IMAP":
             return IMAPModel(model_config)
+        if model_config["type"] == "FTP":
+            return FTPModel(model_config)
+        if model_config["type"] == "SFTP":
+            return FTPModel(model_config, True)
 
         print(f">>>> Error occured, unknown type '{model_config['type']}' !")
         return None

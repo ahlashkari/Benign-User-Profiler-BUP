@@ -81,6 +81,20 @@
     },
 
     {
+        "type": "FTP", "description": "Simple FTP traffic.",
+        "address": "test.rebex.net",
+        "username": "demo", "password": "password",
+        "frequency": 5,
+        "time_interval": 30,
+        "start_time": "08:00",
+        "downloads": [
+            {"path": "/pub/example", "file_name": "readme.txt", "output_dir": "/root/"},
+            {"path": "/pub/example", "file_name": "KeyGenerator.png", "output_dir": "/root/"}
+        ]
+
+    },
+
+    {
         "type": "DNS", "description": "Simple DNS traffic."
     }
 ]

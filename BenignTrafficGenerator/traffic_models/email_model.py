@@ -2,8 +2,11 @@
 
 import email
 import imaplib
+import os
 import smtplib
-from email.message import EmailMessage
+from email.mime.application import MIMEApplication
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 from .traffic_model import TrafficModel
 
 
@@ -24,11 +27,18 @@ class SMTPModel(TrafficModel):
         # TODO: add wait_after
         # TODO: add frequency, start_time, and time_interval
         for email in self.__model_config["emails"]:
-            message = EmailMessage()
-            message.set_content(email["text"])
+            message = MIMEMultipart()
             message['Subject'] = email["subject"]
             message['From'] = sender
             message['To'] = ", ".join(receivers)
+            message.attach(MIMEText(email["text"]))
+
+            for attachment in email["attachments"]:
+                with open(attachment, "rb") as attached_file:
+                    part = MIMEApplication(attached_file.read(), Name = os.path.basename(attachment))
+                part['Content-Disposition'] = f'attachment; filename="{os.path.basename(attachment)}"'
+                message.attach(part)
+
             server.login(sender, password)
             text = message.as_string()
             server.sendmail(sender, receivers, text)
@@ -51,7 +61,7 @@ class IMAPModel(TrafficModel):
         mail = imaplib.IMAP4_SSL("imap.gmail.com")
         mail.login(username, password)
         status, messages = mail.select("INBOX")
-        _, selected_mails = mail.search(None, 'ALL')
+        _, selected_mails = mail.search(None, 'UnSeen')
         for num in selected_mails[0].split():
             _, data = mail.fetch(num, '(RFC822)')
             _, bytes_data = data[0]
@@ -70,6 +80,16 @@ class IMAPModel(TrafficModel):
                     message = part.get_payload(decode=True)
                     print("Message: \n", message.decode())
                     print(40 * "=", "\n")
-                    break
+                if part.get_content_maintype() == 'multipart':
+                    continue
+                if part.get('Content-Disposition') is None:
+                    continue
+
+                filename = part.get_filename()
+                attachment_path = os.path.join(self.__model_config["attachments_dir"], filename)
+                if not os.path.isfile(attachment_path):
+                    with open(attachment_path, 'wb') as attached_file:
+                        attached_file.write(part.get_payload(decode=True))
+
         mail.close()
         mail.logout()

@@ -7,6 +7,7 @@ from .ssh_model import SSHModel
 from .cmd_model import CMDModel
 from .email_model import SMTPModel, IMAPModel
 from .ftp_model import FTPModel
+from .db_model import MongoDBModel
 
 
 class ModelFactory(object):
@@ -28,7 +29,9 @@ class ModelFactory(object):
         if model_config["type"] == "FTP":
             return FTPModel(model_config)
         if model_config["type"] == "SFTP":
-            return FTPModel(model_config, True)
+            return FTPModel(model_config=model_config, ssl=True)
+        if model_config["type"] == "MongoDB":
+            return MongoDBModel(model_config)
 
         print(f">>>> Error occured, unknown type '{model_config['type']}' !")
         return None

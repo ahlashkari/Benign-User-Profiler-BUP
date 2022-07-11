@@ -93,7 +93,17 @@
             {"path": "/pub/example", "file_name": "readme.txt", "output_dir": "/root/"},
             {"path": "/pub/example", "file_name": "KeyGenerator.png", "output_dir": "/root/"}
         ]
+    },
 
+    {
+        "type": "MongoDB", "description": "Simple Remote Database Management (based on MongoDB) traffic.",
+        "url": "mongodb+srv://m001-student:m001-mongodb-basics@sandbox.ffrxn.mongodb.net/admin",
+        "database": "metadata",
+        "collection": "users",
+        "queries": [
+            { "$and" : [ {"gender" : "male"} , {"dob.age": {"$gt": 24}} ] },
+            { "gender": "female" }
+        ]
     },
 
     {

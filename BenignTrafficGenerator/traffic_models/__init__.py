@@ -7,3 +7,4 @@ from .ssh_model import SSHModel
 from .cmd_model import CMDModel
 from .email_model import SMTPModel, IMAPModel
 from .ftp_model import FTPModel
+from .db_model import MongoDBModel

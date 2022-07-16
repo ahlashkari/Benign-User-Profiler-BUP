@@ -11,19 +11,41 @@ class SNMPModel(TrafficModel):
 
     def generate(self) -> None:
         host = self.__model_config["host"]
-        port = self.__model_config["port"] if "port" in self.__model_config else 22
+        credential = self.__model_config["credential"] if "credential" in self.__model_config else None
         get_list = self.__model_config["get_list"]
         set_list = self.__model_config["set_list"]
 
-        # credentials
-        hlapi.CommunityData('ICTSHORE'))
-        # v3
-        hlapi.UsmUserData('testuser', authKey='authenticationkey', privKey='encryptionkey',
-                authProtocol=hlapi.usmHMACSHAAuthProtocol, privProtocol=hlapi.usmAesCfb128Protocol)
+        # TODO: check for deleting other version than v3
+        if credential is not None:
+            if credential["version"] == "v3":
+                hlapi.UsmUserData(credential["username"],
+                                  authKey=credential["auth_key"],
+                                  privKey=credential["private_key"],
+                                  authProtocol=hlapi.usmHMACSHAAuthProtocol,
+                                  privProtocol=hlapi.usmAesCfb128Protocol)
+            else:
+                hlapi.CommunityData(credential["community"]))
 
-        oid = '1.3.6.1.2.1.74.1.30190.1.1.1.0'
-        print(self.get('localhost', [oid], hlapi.CommunityData('private')))
-        self.set('localhost', {oid: Unsigned32(10)}, hlapi.CommunityData('private'))
+        for get_command in get_list:
+            self.get(get_command["host"],
+                    [get_command["oid"]],
+                    hlapi.CommunityData(get_command["community"]))
+
+        for set_command in set_list:
+            self.set(set_command["host"],
+                    {set_command["oid"]: self.get_ASN_value(set_command["type"],
+                                                            set_command["value"])},
+                    hlapi.CommunityData(set_command["community"]))
+
+    def get_ASN_value(self, str_type, value):
+        if str_type == "Unsigned32":
+            return Unsigned32(value)
+
+        if str_type == "Integer32":
+            return Integer32(value)
+
+        if str_type == "DisplayString":
+            return DisplayString(value)
 
     def construct_object_types(self, list_of_oids):
         object_types = []

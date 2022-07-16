@@ -8,6 +8,7 @@ from .cmd_model import CMDModel
 from .email_model import SMTPModel, IMAPModel
 from .ftp_model import FTPModel
 from .db_model import MongoDBModel
+from .snmp_model import SNMPModel
 
 
 class ModelFactory(object):
@@ -32,6 +33,8 @@ class ModelFactory(object):
             return FTPModel(model_config=model_config, ssl=True)
         if model_config["type"] == "MongoDB":
             return MongoDBModel(model_config)
+        if model_config["type"] == "SNMP":
+            return SNMPModel(model_config)
 
         print(f">>>> Error occured, unknown type '{model_config['type']}' !")
         return None

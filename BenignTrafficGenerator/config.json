@@ -107,6 +107,32 @@
     },
 
     {
+        "type": "SNMP", "description": "Simple SNMP traffic.",
+        "credential": {"version": "v2", "community": "private"},
+        "credential": {"version": "v3", "username": "testuser", "auth_key": "authenticationkey", "private_key": "encryptionkey"},
+        "get": [
+            {"oid": "1.3.6.1.2.1.74.1.30190.1.1.1.0", "host": "localhost", "community": "private"},
+            {"oid": "1.3.6.1.2.1.74.1.30190.1.1.2.0", "host": "localhost", "community": "private"},
+            {"oid": "1.3.6.1.2.1.74.1.30190.1.1.3.0", "host": "localhost", "community": "private"}
+        ],
+        "set": [
+            {
+                "oid": "1.3.6.1.2.1.74.1.30190.1.1.1.0",
+                "host": "localhost", "community": "private", "value": 8, "type": "Integer32"
+            },
+            {
+                "oid": "1.3.6.1.2.1.74.1.30190.1.1.2.0",
+                "host": "localhost", "community": "private", "value": 24, "type": "Counter64"
+            },
+            {
+                "oid": "1.3.6.1.2.1.74.1.30190.1.1.3.0",
+                "host": "localhost", "community": "private", "value": "teststring", "type": "DisplayString"
+            }
+        ]
+
+    },
+
+    {
         "type": "DNS", "description": "Simple DNS traffic."
     }
 ]

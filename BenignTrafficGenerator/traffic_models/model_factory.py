@@ -10,6 +10,7 @@ from .ftp_model import FTPModel
 from .db_model import MongoDBModel
 from .snmp_model import SNMPModel
 from .telnet_model import TelnetModel
+from .vpn_model import VPNModel
 
 
 class ModelFactory(object):
@@ -38,6 +39,8 @@ class ModelFactory(object):
             return SNMPModel(model_config)
         if model_config["type"] == "Telnet":
             return TelnetModel(model_config)
+        if model_config["type"] == "VPN":
+            return VPNModel(model_config)
 
         print(f">>>> Error occured, unknown type '{model_config['type']}' !")
         return None

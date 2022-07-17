@@ -10,3 +10,4 @@ from .ftp_model import FTPModel
 from .db_model import MongoDBModel
 from .snmp_model import SNMPModel
 from .telnet_model import TelnetModel
+from .vpn_model import VPNModel

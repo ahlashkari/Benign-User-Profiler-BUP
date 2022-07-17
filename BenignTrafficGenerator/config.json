@@ -50,6 +50,7 @@
         "time_interval": 30,
         "start_time": "08:00",
         "commands": [
+            {"str": "ping -c 4 moeinshafi.ir"},
             {"str": "wget http://205.174.165.80/CICDataset/CICMalMem2022/Dataset/Obfuscated-MalMem2022.csv"},
             {"str": "apt update"},
             {"str": "apt -y dist-upgrade", "wait_after": 10}

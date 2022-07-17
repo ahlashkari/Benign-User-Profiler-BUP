@@ -9,6 +9,7 @@ from .email_model import SMTPModel, IMAPModel
 from .ftp_model import FTPModel
 from .db_model import MongoDBModel
 from .snmp_model import SNMPModel
+from .telnet_model import TelnetModel
 
 
 class ModelFactory(object):
@@ -35,6 +36,8 @@ class ModelFactory(object):
             return MongoDBModel(model_config)
         if model_config["type"] == "SNMP":
             return SNMPModel(model_config)
+        if model_config["type"] == "Telnet":
+            return TelnetModel(model_config)
 
         print(f">>>> Error occured, unknown type '{model_config['type']}' !")
         return None

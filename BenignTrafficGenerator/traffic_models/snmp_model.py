@@ -24,7 +24,7 @@ class SNMPModel(TrafficModel):
                                   authProtocol=hlapi.usmHMACSHAAuthProtocol,
                                   privProtocol=hlapi.usmAesCfb128Protocol)
             else:
-                hlapi.CommunityData(credential["community"]))
+                hlapi.CommunityData(credential["community"])
 
         for get_command in get_list:
             self.get(get_command["host"],

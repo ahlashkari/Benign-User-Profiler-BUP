@@ -133,6 +133,21 @@
     },
 
     {
+        "type": "Telnet", "description": "Simple Telnet traffic.",
+        "host": "localhost", "username": "user", "password": "a",
+        "frequency": 5,
+        "time_interval": 30,
+        "start_time": "08:00",
+        "commands": [
+            {"str": "ls"},
+            {"str": "mkdir test", "wait_after": 2},
+            {"str": "cd test"},
+            {"str": "cd .."},
+            {"str": "rm -r test"}
+        ]
+    },
+
+    {
         "type": "DNS", "description": "Simple DNS traffic."
     }
 ]

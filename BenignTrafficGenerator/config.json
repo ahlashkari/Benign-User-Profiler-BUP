@@ -149,6 +149,15 @@
     },
 
     {
+        "type": "VPN", "description": "Simple VPN connection.",
+        "config_file": "/root/test.ovpn", "username": "user", "password": "test",
+        "duration": 60,
+        "frequency": 5,
+        "time_interval": 30,
+        "start_time": "08:00"
+    },
+
+    {
         "type": "DNS", "description": "Simple DNS traffic."
     }
 ]

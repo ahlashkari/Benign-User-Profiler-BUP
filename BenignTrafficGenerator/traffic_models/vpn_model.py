@@ -88,7 +88,7 @@ class VPNModel(TrafficModel):
         command = f'sudo {self.OPENVPN_PATH} --config {ovpn_path}'
         if username is not None and password is not None:
             command += ' --auth-user-pass <(echo -e "{username}\\n{password}")'
-        elif password is not None:
+        elif username is not None:
             command += ' --auth-user-pass <(echo -e "{username}")'
 
         openvpn_process = subprocess.Popen(['bash', command], shell=True)

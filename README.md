@@ -1,1 +1,1 @@
-# BenignTrafficGenerator
+# User Behaviour Generator (UBG)

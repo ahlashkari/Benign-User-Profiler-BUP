@@ -1,4 +1,4 @@
-# User Behaviour Generator (UBG)
+# Benign User Activities (BUA)
 
 
 

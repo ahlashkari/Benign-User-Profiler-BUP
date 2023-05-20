@@ -1,4 +1,4 @@
-# Benign User Activities (BUA)
+# Benign User Profiling (BUP)
 
 
 

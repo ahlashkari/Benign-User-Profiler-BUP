@@ -1,4 +1,4 @@
-# Benign User Networ Traffic Profiling (BUNTP)
+# Benign User Networ Traffic Generator (BUNTG)
 
 
 

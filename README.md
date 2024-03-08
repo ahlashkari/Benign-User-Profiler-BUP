@@ -1,4 +1,4 @@
-# Benign User Networ Traffic Generator (BUNTG)
+# Benign User Profiler (BUP)
 
 
 

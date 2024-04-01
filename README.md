@@ -7,15 +7,14 @@ TODO: update these values:
 # Table of Contents
 
 - [BenignUserProfiler](#benignuserprofiler)
-- [Table of Contents](#table-of-contents)
 - [Installation](#installation)
 - [Architecture](#Architecture)
-- [Citation and Copywrite 2024](# Citation and Copywrite 2024)
-- [Project Team members](# Project Team members)
-- [Acknowledgement](# Acknowledgement)
+- [Citation and Copywrite 2024](#Citation and Copywrite 2024)
+- [Project Team members](#Project Team members)
+- [Acknowledgement](#Acknowledgement)
 
 
-#benignuserprofiler
+#Benign User Profiler
 
 
 

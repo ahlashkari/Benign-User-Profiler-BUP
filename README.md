@@ -6,15 +6,15 @@ TODO: update these values:
 
 # Table of Contents
 
-- [BenignUserProfiler](#benignuserprofiler)
+- [BenignUserProfiler](#BenignUserProfiler)
 - [Installation](#installation)
 - [Architecture](#Architecture)
-- [Citation and Copywrite 2024](#CitationandCopywrite2024)
+- [Citation and Copywrite 2024](#Citation&Copywrite2024)
 - [Project Team members](#ProjectTeammembers)
 - [Acknowledgement](#Acknowledgement)
 
 
-#Benign User Profiler
+#BenignUserProfiler
 
 
 
@@ -48,7 +48,7 @@ Moreover, this project has been successfully tested on Ubuntu 20.04. It should w
 ![](./architecture.svg)
 
 
-# Citation and Copywrite 2024 
+# Citation&Copywrite2024 
 
 
  
@@ -74,7 +74,7 @@ DOI = {10.3390/info15040195}
 
 
 
-# Project Team members 
+# ProjectTeammembers 
 
 * [**Arash Habibi Lashkari:**](http://ahlashkari.com/index.asp) Founder and supervisor
 

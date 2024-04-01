@@ -6,7 +6,7 @@ TODO: update these values:
 
 # Table of Contents
 
-- [BenignUserProfiler](#BenignUserProfiler)
+- [Benign User Profiler](#BenignUserProfiler)
 - [Installation](#installation)
 - [Architecture](#Architecture)
 - [Citation and Copywrite 2024](#Citation&Copywrite2024)
@@ -14,7 +14,8 @@ TODO: update these values:
 - [Acknowledgement](#Acknowledgement)
 
 
-#BenignUserProfiler
+
+# BenignUserProfiler
 
 
 

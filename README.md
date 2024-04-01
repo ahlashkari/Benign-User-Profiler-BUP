@@ -9,7 +9,16 @@ TODO: update these values:
 - [BenignUserProfiler](#benignuserprofiler)
 - [Table of Contents](#table-of-contents)
 - [Installation](#installation)
-- [Architecture](#architecture)
+- [Architecture](#Architecture)
+- [Citation and Copywrite 2024](## Citation and Copywrite 2024)
+- [Project Team members](## Project Team members)
+- [Acknowledgement](## Acknowledgement)
+
+
+#benignuserprofiler
+
+
+
 
 # Installation
 
@@ -40,7 +49,7 @@ Moreover, this project has been successfully tested on Ubuntu 20.04. It should w
 ![](./architecture.svg)
 
 
-## citation and Copywrite 2024 
+## Citation and Copywrite 2024 
 
 
  

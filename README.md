@@ -9,8 +9,8 @@ TODO: update these values:
 - [BenignUserProfiler](#benignuserprofiler)
 - [Installation](#installation)
 - [Architecture](#Architecture)
-- [Citation and Copywrite 2024](#Citation and Copywrite 2024)
-- [Project Team members](#Project Team members)
+- [Citation and Copywrite 2024](#CitationandCopywrite2024)
+- [Project Team members](#ProjectTeammembers)
 - [Acknowledgement](#Acknowledgement)
 
 

@@ -10,9 +10,9 @@ TODO: update these values:
 - [Table of Contents](#table-of-contents)
 - [Installation](#installation)
 - [Architecture](#Architecture)
-- [Citation and Copywrite 2024](## Citation and Copywrite 2024)
-- [Project Team members](## Project Team members)
-- [Acknowledgement](## Acknowledgement)
+- [Citation and Copywrite 2024](# Citation and Copywrite 2024)
+- [Project Team members](# Project Team members)
+- [Acknowledgement](# Acknowledgement)
 
 
 #benignuserprofiler
@@ -49,7 +49,7 @@ Moreover, this project has been successfully tested on Ubuntu 20.04. It should w
 ![](./architecture.svg)
 
 
-## Citation and Copywrite 2024 
+# Citation and Copywrite 2024 
 
 
  
@@ -75,7 +75,7 @@ DOI = {10.3390/info15040195}
 
 
 
-## Project Team members 
+# Project Team members 
 
 * [**Arash Habibi Lashkari:**](http://ahlashkari.com/index.asp) Founder and supervisor
 
@@ -83,6 +83,6 @@ DOI = {10.3390/info15040195}
 
 
 
-## Acknowledgement
+# Acknowledgement
 This project has been made possible through funding from the Natural Sciences and Engineering Research Council of Canada — NSERC (#RGPIN-2020-04701) and Canada Research Chair (Tier II) - (#CRC-2021-00340) to Arash Habibi Lashkari.
 

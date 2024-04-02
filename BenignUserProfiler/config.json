@@ -1,0 +1,88 @@
+[
+    {
+        "type": "SMTP", "description": "Simple SMTP traffic.",
+        "sender": "MY-GMAIL-ADDRESS@GMAIL.COM", "password": "MY-PASSWORD",
+        "receivers": ["example@gmail.com", "example2@gmail.com"],
+        "frequency": 10,
+        "time_interval": 1200,
+        "start_time": "14/10/22 10:50:00",
+        "start_time_format": "%d/%m/%y %H:%M:%S",
+        "emails": [
+            {
+                "subject": "Benign Traffic Generator Test",
+                "text": "Hi Dear Tester\nThis is an automatic test from Benign Traffic Generator.\nHave a nice day!\n",
+                "attachments": ["C:/Users/bcccu/Documents/1.jpg", "C:/Users/bcccu/Documents/2.jpg",
+                                "C:/Users/bcccu/Documents/3.jpg", "C:/Users/bcccu/Documents/raw.txt"],
+                "wait_after": 10
+            }
+        ]
+    },
+    
+    {
+        "type": "IMAP", "description": "Simple IMAP traffic.",
+        "username": "MY-GMAIL-ADDRESS@GMAIL.COM", "password": "MY-PASSWORD",
+        "attachments_dir": "C:/Users/bcccu/Documents/",
+        "frequency": 4,
+        "time_interval": 1200,
+        "start_time": "14/10/22 10:50:00",
+        "start_time_format": "%d/%m/%y %H:%M:%S"
+    },
+
+    {
+        "type": "HTTPS", "browser": "firefox",
+        "link": "https://www.yorku.ca/research/bccc/",
+        "frequency": 10,
+        "time_interval": 600,
+        "start_time": "14/10/22 10:55:00",
+        "start_time_format": "%d/%m/%y %H:%M:%S",
+        "clicks": [
+            {"type": "scroll_down", "wait_after": 100}
+        ]
+    },
+    
+    {
+        "type": "SSH", "description": "Simple SSH traffic.",
+        "address": "162.55.212.185", "port": "22",
+        "username": "test", "password": "MY-PASS",
+        "frequency": 5,
+        "time_interval": 1000,
+        "start_time": "14/10/22 10:58:00",
+        "start_time_format": "%d/%m/%y %H:%M:%S",
+        "commands": [
+            {"str": "ls"},
+            {"str": "mkdir test", "wait_after": 200},
+            {"str": "cd test"}
+        ]
+    },
+
+    {
+        "type": "CMD", "description": "Simple CMD traffic.",
+        "frequency": 5,
+        "time_interval": 900,
+        "start_time": "14/10/22 11:10:00",
+        "start_time_format": "%d/%m/%y %H:%M:%S",
+        "commands": [
+            {"str": "apt update"},
+            {"str": "apt -y dist-upgrade", "wait_after": 10}
+        ]
+    },
+
+    {
+        "type": "FTP", "description": "Simple FTP traffic.",
+        "address": "test.rebex.net",
+        "username": "demo", "password": "password",
+        "frequency": 2,
+        "time_interval": 600,
+        "start_time": "14/10/22 11:07:00",
+        "start_time_format": "%d/%m/%y %H:%M:%S",
+        "downloads": [
+            {"path": "/pub/example", "file_name": "readme.txt", "output_dir": "/home/moein/"},
+            {"path": "/pub/example", "file_name": "KeyGenerator.png", "output_dir": "/home/moein/"}
+        ],
+        "uploads": [
+            {"path": "/pub/example", "file_name": "readme.txt", "input_dir": "/home/moein/"},
+            {"path": "/pub/example", "file_name": "KeyGenerator.png", "input_dir": "/home/moein/"}
+        ]
+    }
+
+]

@@ -1,8 +1,5 @@
 # Benign User Profiler (BUP)
 
-TODO: update these values:
-![](https://img.shields.io/github/stars/pandao/editor.md.svg) ![](https://img.shields.io/github/forks/pandao/editor.md.svg) ![](https://img.shields.io/github/tag/pandao/editor.md.svg) ![](https://img.shields.io/github/release/pandao/editor.md.svg) ![](https://img.shields.io/github/issues/pandao/editor.md.svg)
-
 
 # Table of Contents
 
@@ -25,23 +22,23 @@ TODO: update these values:
 You must install the requirements in your system before you can begin installing or running anything. To do so, you can easily run this command:
 
 ```bash
-sudo pip3 install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 You are now ready to install BenignUserProfiler. In order to do so, you should run this command, which will install the BenignUserProfiler package in your system:
 
 ```bash
-sudo python3 setup.py install
+python3 setup.py install
 ```
 
 Finally, to execute the program, run this command:
 
 ```bash
-sudo benign-user-profiler
+benign-user-profiler
 ```
 Also, you can use `-h` to see different options of the program.
 
-Moreover, this project has been successfully tested on Ubuntu 20.04. It should work on other versions of Ubuntu OS (or even Debian OS) as long as your system has the necessary python3 packages (you can see the required packages in the `requirements.txt` file).
+Moreover, this project has been successfully tested on Ubuntu 22.04. It should work on other versions of Ubuntu OS (or even Debian OS) as long as your system has the necessary python3 packages (you can see the required packages in the `requirements.txt` file).
 
 # Architecture
 
@@ -53,7 +50,7 @@ Moreover, this project has been successfully tested on Ubuntu 20.04. It should w
 
 
  
-For citation in your works and also understanding DoHLyzer completely, you can find below published paper:
+For citation in your works and also to understand BUP completely, you can find below the published paper:
 
 "Toward Generating a New Cloud-Based Distributed Denial of Service (DDoS) Dataset and Cloud Intrusion Traffic Characterization", Shafi, MohammadMoein, Arash Habibi Lashkari, Vicente Rodriguez, and Ron Nevo.; Information 15, no. 4: 195. https://doi.org/10.3390/info15040195
 

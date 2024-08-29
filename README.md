@@ -1,4 +1,4 @@
-![](https://github.com/ahlashkari/Benign-User-Profiler-BUP/main/bccc.jpg)
+![](https://github.com/ahlashkari/Benign-User-Profiler-BUP/blob/main/bccc.jpg)
 
 # Benign User Profiler (BUP)
 

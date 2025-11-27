@@ -78,6 +78,8 @@ DOI = {10.3390/info15040195}
 
 * [**Arash Habibi Lashkari:**](http://ahlashkari.com/index.asp) Founder and supervisor
 
+* [**Amirhossein Ahmadnejad Roudsari:**](https://github.com/aahmadnejad) Graduate researcher and developer - York University
+
 * [**Moein Shafi:**](https://github.com/moein-shafi) Graduate researcher and developer - York University
 
 

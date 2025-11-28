@@ -1,0 +1,322 @@
+{
+  "general": {
+    "profiles": ["browsing", "email", "ftp", "ssh", "desktop"],
+    "scheduler": {
+      "type": "time_interval",
+      "arguments": {
+        "work_hours": {
+          "start": "09:00",
+          "end": "17:00"
+        },
+        "randomize": true
+      }
+    }
+  },
+  "profiles": {
+    "browsing": {
+      "type": "http",
+      "modules": [
+        {
+          "name": "custom_service",
+          "type": "http",
+          "website": "custom_service",
+          "custom_service_url": "http://192.168.1.55",
+          "scp_username": "capwifi",
+          "scp_password": "bccc1234",
+          "scp_host": "192.68.1.55",
+          "scp_upload_path": "~/file-server-uploads",
+          "frequency": 1,
+          "time_interval": [3600, 7200],
+          "start_time": "10:00",
+          "start_time_format": "%H:%M",
+          "work_hours": {
+            "start": "09:00",
+            "end": "17:00"
+          }
+        },
+        {
+          "name": "web_browsing",
+          "type": "http",
+          "websites": [
+            "https://www.yorku.ca",
+            "https://www.wikipedia.org",
+            "https://www.python.org",
+            "https://www.github.com"
+          ],
+          "browse_time": [30, 120],
+          "scroll_min": 3,
+          "scroll_max": 10,
+          "frequency": 1,
+          "time_interval": [600, 1800],
+          "randomize": true,
+          "simulate": false
+        },
+        {
+          "name": "youtube_watching",
+          "type": "http",
+          "youtube_videos": [
+            "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "https://www.youtube.com/watch?v=example123",
+            "https://www.youtube.com/watch?v=sample456"
+          ],
+          "youtube_min_watch": 60,
+          "youtube_max_watch": 180,
+          "youtube_engagement": true,
+          "frequency": 1,
+          "time_interval": [1800, 3600],
+          "simulate": false
+        }
+      ]
+    },
+    "email": {
+      "type": "email",
+      "modules": [
+        {
+          "name": "email_sending",
+          "type": "SMTP",
+          "service": "gmail",
+          "sender": "your.email@gmail.com",
+          "password": "your_app_password",
+          "receivers": ["recipient1@example.com", "recipient2@example.com"],
+          "generate_content": true,
+          "num_emails": 2,
+          "simulate": false,
+          "frequency": 1,
+          "time_interval": [1800, 3600],
+          "start_time": "11:00",
+          "start_time_format": "%H:%M"
+        },
+        {
+          "name": "email_checking",
+          "type": "IMAP",
+          "service": "gmail",
+          "username": "your.email@gmail.com",
+          "password": "your_app_password",
+          "mailbox": "INBOX",
+          "search_criteria": "UNSEEN",
+          "max_emails": 5,
+          "mark_as_read": true,
+          "check_folders": ["Sent", "Drafts", "Important"],
+          "download_attachments": true,
+          "attachments_dir": "/tmp/email_attachments",
+          "simulate": false,
+          "frequency": 1,
+          "time_interval": [900, 1800]
+        }
+      ]
+    },
+    "ftp": {
+      "type": "ftp",
+      "modules": [
+        {
+          "name": "ftp_operations",
+          "type": "ftp",
+          "address": "ftp.example.com",
+          "username": "ftpuser",
+          "password": "ftppassword",
+          "browse": ["/", "/public", "/uploads"],
+          "downloads": [
+            {
+              "path": "/public",
+              "output_dir": "/tmp/ftp_downloads",
+              "file_name": "data.txt",
+              "wait_after": 2
+            }
+          ],
+          "uploads": [
+            {
+              "path": "/uploads",
+              "input_dir": "/tmp/ftp_uploads",
+              "file_name": "report.txt",
+              "wait_after": 2
+            }
+          ],
+          "simulate": false,
+          "frequency": 1,
+          "time_interval": [3600, 7200]
+        },
+        {
+          "name": "sftp_operations",
+          "type": "ftps",
+          "address": "sftp.example.com",
+          "username": "sftpuser",
+          "password": "sftppassword",
+          "browse": ["/home/user", "/home/user/documents"],
+          "downloads": [
+            {
+              "path": "/home/user/documents",
+              "output_dir": "/tmp/sftp_downloads",
+              "file_name": "important.pdf",
+              "wait_after": 2
+            }
+          ],
+          "simulate": false,
+          "frequency": 1,
+          "time_interval": [3600, 7200]
+        }
+      ]
+    },
+    "ssh": {
+      "type": "ssh",
+      "modules": [
+        {
+          "name": "ssh_operations",
+          "type": "ssh",
+          "address": "ssh.example.com",
+          "username": "sshuser",
+          "password": "sshpassword",
+          "commands": [
+            {
+              "str": "ls -la",
+              "show_output": true,
+              "wait_after": 1
+            },
+            {
+              "str": "ps aux | grep python",
+              "show_output": true,
+              "wait_after": 1
+            },
+            {
+              "str": "free -m",
+              "show_output": true,
+              "wait_after": 1
+            },
+            {
+              "str": "df -h",
+              "show_output": true,
+              "wait_after": 1
+            },
+            {
+              "str": "uptime",
+              "show_output": true
+            }
+          ],
+          "simulate": false,
+          "frequency": 1,
+          "time_interval": [3600, 7200]
+        }
+      ]
+    },
+    "desktop": {
+      "type": "cmd",
+      "modules": [
+        {
+          "name": "random_apps",
+          "type": "CMD",
+          "linux_apps": [
+            "gnome-calculator",
+            "gedit",
+            "nautilus",
+            "gnome-system-monitor",
+            "file-roller",
+            "rhythmbox"
+          ],
+          "windows_apps": [
+            "calc.exe",
+            "notepad.exe",
+            "explorer.exe",
+            "control.exe",
+            "control.exe",
+            "cmd.exe",
+            "mspaint.exe",
+            "copilot.exe",
+            "msedge.exe"
+          ],
+          "min_apps_to_open": 2,
+          "max_apps_to_open": 4,
+          "app_use_time_min": 30,
+          "app_use_time_max": 300,
+          "frequency": 2,
+          "time_interval": [1800, 3600],
+          "start_time": "09:15",
+          "start_time_format": "%H:%M",
+          "work_hours": {
+            "start": "09:00",
+            "end": "17:00"
+          }
+        },
+        {
+          "name": "microsoft_office",
+          "type": "CMD",
+          "windows_commands": [
+            {
+              "command": "start winword",
+              "platform": "windows",
+              "description": "Open Microsoft Word",
+              "show_output": false,
+              "use_time": [120, 600]
+            },
+            {
+              "command": "start excel",
+              "platform": "windows",
+              "description": "Open Microsoft Excel",
+              "show_output": false,
+              "use_time": [120, 600]
+            }
+          ],
+          "linux_commands": [
+            {
+              "command": "gnome-software",
+              "platform": "linux",
+              "description": "Open Software Center",
+              "show_output": false,
+              "use_time": [120, 600]
+            },
+            {
+              "command": "rhythmbox",
+              "platform": "linux",
+              "description": "Open Rhythmbox Music Player",
+              "show_output": false,
+              "use_time": [120, 600]
+            }
+          ],
+          "create_office_docs": true,
+          "frequency": 1,
+          "time_interval": [5400, 10800],
+          "start_time": "10:45",
+          "start_time_format": "%H:%M",
+          "work_hours": {
+            "start": "09:00",
+            "end": "17:00"
+          }
+        },
+        {
+          "name": "ping_scan",
+          "type": "CMD",
+          "commands": [
+            {
+              "command": "ping -c 3 192.168.1.1",
+              "platform": "linux",
+              "show_output": true,
+              "wait_after": 2
+            },
+            {
+              "command": "for i in {1..10}; do ping -c 1 -W 1 192.168.1.$i; done",
+              "platform": "linux",
+              "show_output": true,
+              "wait_after": 5
+            }
+          ],
+          "windows_commands": [
+            {
+              "command": "ping 192.168.1.1",
+              "platform": "windows",
+              "show_output": true,
+              "wait_after": 2
+            },
+            {
+              "command": "for /L %i in (1,1,10) do @ping -n 1 -w 1000 192.168.1.%i",
+              "platform": "windows",
+              "show_output": true,
+              "wait_after": 5
+            }
+          ],
+          "frequency": 1,
+          "time_interval": [3600, 7200],
+          "start_time": "11:00",
+          "start_time_format": "%H:%M"
+        }
+      ]
+    }
+  }
+}

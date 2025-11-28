@@ -1,0 +1,435 @@
+{
+  "custom_network": {
+    "type": "HTTP",
+    "website": "custom_service",
+    "custom_service_url": "http://192.168.1.55",
+    "scp_username": "capwifi",
+    "scp_password": "bccc1234",
+    "scp_host": "192.168.1.55",
+    "scp_upload_path": "~/file-server/uploads",
+    "frequency": 6,
+    "time_interval": [3600, 7200],
+    "start_time": "10:00",
+    "start_time_format": "%H:%M",
+    "work_hours": {
+      "start": "09:00",
+      "end": "17:00"
+    }
+  },
+  "web_browsing": {
+    "type": "HTTP",
+    "randomize": true,
+    "websites": [
+      "https://www.temu.com",
+      "https://www.github.com",
+      "https://www.reddit.com",
+      "https://news.ycombinator.com",
+      "https://news.yorku.ca",
+      "https://www.stackoverflow.com",
+      "https://www.nytimes.com/ca/",
+      "https://www.yorku.ca/research/bccc/",
+      "https://www.imdb.com/",
+      "https://yahoo.com",
+      "https://www.canada.ca/en.html",
+      "https://www.bbc.com/news",
+      "https://www.adidas.ca/en"
+    ],
+    "visit_sublinks": {
+      "enabled": true,
+      "depth": 5,
+      "max_links": 5
+    },
+    "frequency": 4,
+    "time_interval": [600, 1200],
+    "start_time": "09:00",
+    "start_time_format": "%H:%M",
+    "work_hours": {
+      "start": "09:00",
+      "end": "17:00"
+    }
+  },
+  "youtube_searches": {
+    "type": "HTTP",
+    "website": "youtube",
+    "youtube_searches": ["python programming", "cloud computing", "machine learning", "Cisco", "York university"],
+    "youtube_min_watch": 60,
+    "youtube_max_watch": 180,
+    "frequency": 2,
+    "time_interval": [1200, 3600],
+    "start_time": "10:30",
+    "start_time_format": "%H:%M",
+    "work_hours": {
+      "start": "09:00",
+      "end": "17:00"
+    }
+  },
+  "youtube_direct": {
+    "type": "HTTP",
+    "website": "youtube",
+    "youtube_video": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "youtube_min_watch": 60,
+    "youtube_max_watch": 120,
+    "frequency": 1,
+    "time_interval": [1800, 3600],
+    "start_time": "13:00",
+    "start_time_format": "%H:%M"
+  },
+  "download_media": {
+    "type": "HTTP",
+    "website": "download",
+    "download_search_terms": ["nature", "city", "technology", "business"],
+    "frequency": 1,
+    "time_interval": [3600, 7200],
+    "start_time": "13:30",
+    "start_time_format": "%H:%M"
+  },
+  "direct_media_downloads": {
+    "type": "HTTP",
+    "website": "download",
+    "download_urls": [
+      "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4",
+      "https://sample-videos.com/audio/mp3/crowd-cheering.mp3",
+      "https://sample-videos.com/img/Sample-jpg-image-10mb.jpg",
+      "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+    ],
+    "frequency": 1,
+    "time_interval": [3600, 7200],
+    "start_time": "14:30",
+    "start_time_format": "%H:%M"
+  },
+  "soundcloud_listening": {
+    "type": "HTTP",
+    "website": "soundcloud",
+    "soundcloud_searches": ["wait earshot", "bring me to life cover", "we are the world bb king", "flying (live) anathema", "nothing else  lost control"],
+    "soundcloud_min_listen": 60,
+    "soundcloud_max_listen": 300,
+    "frequency": 2,
+    "time_interval": [2400, 4800],
+    "start_time": "11:30",
+    "start_time_format": "%H:%M",
+    "work_hours": {
+      "start": "09:00",
+      "end": "17:00"
+    }
+  },
+  "google_search": {
+    "type": "HTTP",
+    "website": "google",
+    "search_terms": ["latest news", "programming tutorials", "machine learning", "data science", "cloud computing","holiday"],
+    "click_results": true,
+    "min_results_to_visit": 1,
+    "max_results_to_visit": 3,
+    "frequency": 5,
+    "time_interval": [1800, 3600],
+    "start_time": "10:00",
+    "start_time_format": "%H:%M",
+    "work_hours": {
+      "start": "09:00",
+      "end": "17:00"
+    }
+  },
+  "firefox_bar_search": {
+    "type": "HTTP",
+    "website": "firefox_search",
+    "firefox_search_terms": ["weather forecast", "local news", "latest movies", "popular songs", "recent sports events"],
+    "click_results": true,
+    "min_results_to_visit": 1,
+    "max_results_to_visit": 2,
+    "frequency": 1,
+    "time_interval": [2400, 4800],
+    "start_time": "11:00",
+    "start_time_format": "%H:%M",
+    "work_hours": {
+      "start": "09:00",
+      "end": "17:00"
+    }
+  },
+  "ping_scan": {
+    "type": "CMD",
+    "commands": [
+      {
+        "command": "ping -c 3 192.168.1.1",
+        "platform": "linux",
+        "show_output": true,
+        "wait_after": 2
+      },
+      {
+        "command": "for i in {1..10}; do ping -c 1 -W 1 192.168.1.$i; done",
+        "platform": "linux",
+        "show_output": true,
+        "wait_after": 5
+      }
+    ],
+    "windows_commands": [
+      {
+        "command": "ping 192.168.1.1",
+        "platform": "windows",
+        "show_output": true,
+        "wait_after": 2
+      },
+      {
+        "command": "for /L %i in (1,1,10) do @ping -n 1 -w 1000 192.168.1.%i",
+        "platform": "windows",
+        "show_output": true,
+        "wait_after": 5
+      }
+    ],
+    "frequency": 1,
+    "time_interval": [3600, 7200],
+    "start_time": "11:00",
+    "start_time_format": "%H:%M"
+  },
+  "email_sending": {
+    "type": "SMTP",
+    "service": "gmail",
+    "sender": "email@gmail.com",
+    "password": "PASSWORD",
+    "receivers": ["p6bccc@outlook.com", "p3bccc@outlook.com"],
+    "generate_content": true,
+    "num_emails": 2,
+    "simulate": false,
+    "frequency": 1,
+    "time_interval": [1800, 3600],
+    "start_time": "11:00",
+    "start_time_format": "%H:%M"
+  },
+  "email_checking": {
+    "type": "IMAP",
+    "service": "gmail",
+    "username": "email@gmail.com",
+    "password": "PASSWORD",
+    "mailbox": "INBOX",
+    "search_criteria": "UNSEEN",
+    "max_emails": 5,
+    "mark_as_read": true,
+    "check_folders": ["Sent", "Drafts", "Important"],
+    "download_attachments": true,
+    "attachments_dir": "/home/pcpc/output-benign/email_attachments",
+    "simulate": false,
+    "frequency": 2,
+    "time_interval": [1200, 2400],
+    "start_time": "09:30",
+    "start_time_format": "%H:%M"
+  },
+  "ftp_operations": {
+    "type": "FTP",
+    "address": "ftp.dlptest.com",
+    "username": "USERNAME",
+    "password": "PASSWORD",
+    "browse": ["/", "/public", "/uploads"],
+    "downloads": [
+      {
+        "path": "/public",
+        "output_dir": "/home/pcpc/output-benign/ftp_downloads",
+        "file_name": "data.txt",
+        "wait_after": 5
+      }
+    ],
+    "uploads": [
+      {
+        "path": "/uploads",
+        "input_dir": "/home/pcpc/output-benign/ftp_uploads",
+        "file_name": "report.txt",
+        "wait_after": 5
+      }
+    ],
+    "simulate": false,
+    "frequency": 1,
+    "time_interval": [3600, 7200],
+    "start_time": "14:00",
+    "start_time_format": "%H:%M"
+  },
+  "sftp_operations": {
+    "type": "SFTP",
+    "address": "sftp.example.com",
+    "username": "sftpuser",
+    "password": "sftppassword",
+    "browse": ["/home/user", "/home/user/documents"],
+    "downloads": [
+      {
+        "path": "/home/user/documents",
+        "output_dir": "/home/pcpc/output-benign/sftp_downloads",
+        "file_name": "important.pdf",
+        "wait_after": 5
+      }
+    ],
+    "uploads": [
+      {
+        "path": "/home/user/uploads",
+        "input_dir": "/home/pcpc/output-benign/sftp_uploads",
+        "file_name": "data.csv",
+        "wait_after": 5
+      }
+    ],
+    "simulate": false,
+    "frequency": 1,
+    "time_interval": [4800, 9600],
+    "start_time": "15:00",
+    "start_time_format": "%H:%M"
+  },
+  "ssh_commands": {
+    "type": "SSH",
+    "address": "2001:20a9:1000:94fd:2900:05ff:fe7c:0312",
+    "username": "user",
+    "password": "password",
+    "commands": [
+      {
+        "str": "ls -la",
+        "show_output": true,
+        "wait_after": 2
+      },
+      {
+        "str": "ps aux | grep python",
+        "show_output": true,
+        "wait_after": 2
+      },
+      {
+        "str": "free -m",
+        "show_output": true,
+        "wait_after": 2
+      },
+      {
+        "str": "df -h",
+        "show_output": true,
+        "wait_after": 2
+      },
+      {
+        "str": "uptime",
+        "show_output": true,
+        "wait_after": 2
+      }
+    ],
+    "simulate": false,
+    "frequency": 1,
+    "time_interval": [3600, 7200],
+    "start_time": "12:00",
+    "start_time_format": "%H:%M"
+  },
+  "cmd_linux": {
+    "type": "CMD",
+    "commands": [
+      {
+        "command": "ps aux | grep python",
+        "platform": "linux",
+        "show_output": true,
+        "wait_after": 2
+      },
+      {
+        "command": "free -m",
+        "platform": "linux",
+        "show_output": true,
+        "wait_after": 2
+      },
+      {
+        "command": "df -h",
+        "platform": "linux",
+        "show_output": true,
+        "wait_after": 2
+      }
+    ],
+    "frequency": 1,
+    "time_interval": [300, 900],
+    "start_time": "11:30",
+    "start_time_format": "%H:%M",
+    "work_hours": {
+      "start": "09:00",
+      "end": "17:00"
+    }
+  },
+  "random_apps": {
+    "type": "CMD",
+    "linux_apps": [
+      "gnome-calculator",
+      "gedit",
+      "gnome-terminal",
+      "nautilus",
+      "gnome-software",
+      "gnome-system-monitor",
+      "evince",
+      "file-roller",
+      "rhythmbox",
+      "snap-store"
+    ],
+    "windows_apps": [
+      "calc.exe",
+      "notepad.exe",
+      "explorer.exe",
+      "control.exe", 
+      "control.exe",
+      "cmd.exe",
+      "mspaint.exe",
+      "copilot.exe",
+      "msedge.exe"
+    ],
+    "min_apps_to_open": 2,
+    "max_apps_to_open": 5,
+    "app_use_time_min": 3,
+    "app_use_time_max": 30,
+    "frequency": 2,
+    "time_interval": [1800, 3600],
+    "start_time": "09:15",
+    "start_time_format": "%H:%M",
+    "work_hours": {
+      "start": "09:00",
+      "end": "17:00"
+    }
+  },
+  "microsoft_office": {
+    "type": "CMD",
+    "windows_commands": [
+      {
+        "command": "start winword",
+        "platform": "windows",
+        "description": "Open Microsoft Word",
+        "show_output": false,
+        "use_time": [120, 600]
+      },
+      {
+        "command": "start excel",
+        "platform": "windows",
+        "description": "Open Microsoft Excel",
+        "show_output": false,
+        "use_time": [120, 600]
+      },
+      {
+        "command": "start powerpnt",
+        "platform": "windows",
+        "description": "Open Microsoft PowerPoint",
+        "show_output": false,
+        "use_time": [120, 600]
+      }
+    ],
+    "linux_commands": [
+      {
+        "command": "rhythmbox",
+        "platform": "linux",
+        "description": "Open Rhythmbox Music Player",
+        "show_output": false,
+        "use_time": [120, 600]
+      },
+      {
+        "command": "gnome-clocks",
+        "platform": "linux",
+        "description": "Open clocks",
+        "show_output": false,
+        "use_time": [120, 600]
+      },
+      {
+        "command": "gnome-calendar",
+        "platform": "linux",
+        "description": "Open calendar",
+        "show_output": false,
+        "use_time": [160, 800]
+      }
+    ],
+    "create_office_docs": true,
+    "frequency": 2,
+    "time_interval": [5400, 10800],
+    "start_time": "10:45",
+    "start_time_format": "%H:%M",
+    "work_hours": {
+      "start": "09:00",
+      "end": "17:00"
+    }
+  }
+}

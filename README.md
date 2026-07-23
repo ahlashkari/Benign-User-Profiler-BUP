@@ -240,6 +240,12 @@ This project has been successfully tested on Ubuntu 22.04. It should work on oth
 - **Scheduling**: Configure frequency and timing of activities with work hours restrictions and optional task randomization
 - **Cross-platform**: Works on Linux and Windows with platform-specific implementations
 
+## Feature Visualization
+
+The figure below shows the BUP feature taxonomy, organized by feature category and subgroup.
+
+![PDFMalLyzer Feature Taxonomy](BUP.jpg)
+
 
 # Architecture
 

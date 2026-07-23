@@ -1,3 +1,7 @@
+
+![](https://github.com/ahlashkari/Benign-User-Profiler-BUP/blob/main/bccc.jpg)
+
+# Benign User Profiler (BUP)
 ![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Paramiko](https://img.shields.io/badge/SSH-Paramiko-4B8BBE?style=for-the-badge&logo=ssh&logoColor=white)
 ![Requests](https://img.shields.io/badge/HTTP-Requests-FF6B6B?style=for-the-badge&logo=python&logoColor=white)
@@ -5,10 +9,6 @@
 ![PyAutoGUI](https://img.shields.io/badge/Automation-PyAutoGUI-FFD43B?style=for-the-badge&logo=python&logoColor=black)
 ![Firefox](https://img.shields.io/badge/Browser-Firefox-FF7139?style=for-the-badge&logo=firefox&logoColor=white)
 
-
-![](https://github.com/ahlashkari/Benign-User-Profiler-BUP/blob/main/bccc.jpg)
-
-# Benign User Profiler (BUP)
 BUP is a tool for generating benign user traffic patterns for security research and testing. It simulates realistic user behavior across various protocols and applications.
 
 # Table of Contents
